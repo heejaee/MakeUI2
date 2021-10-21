@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MakeUI2">
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".AlarmAddActivity"></activity>
+        <activity android:name=".MedicineActivity" />
+        <activity android:name=".TextActivity" />
+        <activity android:name=".SettingActivity" />
         <activity android:name=".AlarmActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

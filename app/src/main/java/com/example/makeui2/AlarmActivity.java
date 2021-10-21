@@ -25,6 +25,16 @@ public class AlarmActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //getSupportActionBar().setTitle("복약알림"); // 툴바 제목 설정
 
+
+        findViewById(R.id.alarm_add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( AlarmActivity.this , AlarmAddActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);

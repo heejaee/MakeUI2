@@ -10,7 +10,7 @@
 
     <Button
 
-        android:id="@+id/button"
+        android:id="@+id/medicine"
         android:layout_width="0dp"
         android:layout_height="220dp"
         android:layout_marginTop="60dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/text"
         android:layout_width="0dp"
         android:layout_height="220dp"
         android:layout_marginTop="40dp"
@@ -39,10 +39,10 @@
         android:text="텍스트 촬영"
         android:textColor="@color/black"
         android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/medicine"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="@+id/medicine"
+        app:layout_constraintTop_toBottomOf="@+id/medicine" />
 
     <Button
         android:id="@+id/alarm"

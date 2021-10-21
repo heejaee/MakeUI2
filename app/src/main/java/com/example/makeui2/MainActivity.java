@@ -13,6 +13,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.medicine).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MainActivity.this , MedicineActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
+        findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( MainActivity.this , TextActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
 
 
         findViewById(R.id.alarm).setOnClickListener(new View.OnClickListener() {
