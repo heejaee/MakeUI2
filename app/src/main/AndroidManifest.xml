@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MakeUI2">
-        <activity android:name=".AlarmAddActivity"></activity>
+        <activity android:name=".Time"></activity>
+        <activity android:name=".AdapterActivity" />
+        <activity android:name=".DeviceBootReceiver" />
+        <activity android:name=".AlarmReceiver" />
+        <activity android:name=".TimePickerActivity" />
         <activity android:name=".MedicineActivity" />
         <activity android:name=".TextActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".AlarmActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
+        <activity android:name=".MainActivity"
+            android:theme="@style/SplashTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

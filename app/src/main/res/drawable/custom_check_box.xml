@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 체크박스 해제상태 -->
+    <item android:drawable="@drawable/outline_radio_button_unchecked_24"
+        android:state_checked="false" />
+    <!-- 체크박스 선택상태 -->
+    <item android:drawable="@drawable/outline_check_circle_outline_24"
+        android:state_checked="true" />
+    <!-- default state -->
+    <item android:drawable="@drawable/outline_radio_button_unchecked_24" />
+
+
+</selector>

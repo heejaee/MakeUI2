@@ -10,8 +10,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main) ;
 
         findViewById(R.id.medicine).setOnClickListener(new View.OnClickListener() {
             @Override
