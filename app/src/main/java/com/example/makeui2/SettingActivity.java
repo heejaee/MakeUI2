@@ -2,14 +2,18 @@ package com.example.makeui2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import android.annotation.SuppressLint;
@@ -19,7 +23,10 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
+import android.widget.Spinner;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -62,7 +69,10 @@ public class SettingActivity extends AppCompatActivity {
         RadioGroup colorType3 = findViewById(R.id.colorType3);
 
 
-
+        Spinner s1 = (Spinner) findViewById(R.id.spinner);
+        String[] test = {"2001","2000","1999","1998","1997","1996","1995","1994","1993","1992","1991","1990","1989","1988","1987","1986","1985","1984"};
+        SpinnerAdapter s1Adapter = new SpinnerAdapter(this, android.R.layout.simple_spinner_item, test);
+        s1.setAdapter(s1Adapter);
 
         //라디오버튼 체크시 이벤트
         colorType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -126,9 +136,55 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
+    public class SpinnerAdapter extends ArrayAdapter<String> {
+        Context context;
+        String[] items = new String[]{};
 
+        public SpinnerAdapter(final Context context,
+                              final int textViewResourceId, final String[] objects) {
+            super(context, textViewResourceId, objects);
+            this.items = objects;
+            this.context = context;
+        }
+
+        @Override
+        public View getDropDownView(int position, View convertView,
+                                    ViewGroup parent) {
+
+            if (convertView == null) {
+                LayoutInflater inflater = LayoutInflater.from(context);
+                convertView = inflater.inflate(
+                        android.R.layout.simple_spinner_dropdown_item, parent, false);
+            }
+
+            TextView tv = (TextView) convertView.findViewById(android.R.id.text1);
+            tv.setText(items[position]);
+
+            tv.setTextSize(30);
+            tv.setHeight(50);
+            return convertView;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                LayoutInflater inflater = LayoutInflater.from(context);
+                convertView = inflater.inflate(
+                        android.R.layout.simple_spinner_item, parent, false);
+            }
+
+            TextView tv = (TextView) convertView
+                    .findViewById(android.R.id.text1);
+            tv.setText(items[position]);
+
+            tv.setTextSize(30);
+            return convertView;
+        }
+    }
 
 
     public boolean onCreateOptionsMenu(Menu menu) {

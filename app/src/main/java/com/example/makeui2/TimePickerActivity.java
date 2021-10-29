@@ -1,6 +1,7 @@
 package com.example.makeui2;;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -51,17 +52,12 @@ public class TimePickerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_picker);
         final TimePicker timePicker = (TimePicker)findViewById(R.id.time_picker);
+        timePicker.setIs24HourView(true);
 
-
-
-
-
-
-
-
-
-
-
+        Toolbar toolbar = findViewById(R.id.next_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // 뒤로가기 버튼, 디폴트로 true만 해도 백버튼이 생김
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         currentTime = Calendar.getInstance().getTime();
         SimpleDateFormat day = new SimpleDateFormat("dd", Locale.getDefault());
